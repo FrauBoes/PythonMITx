@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun 15 15:59:11 2017
+
+@author: thelma
+"""
+
+balance = 3000
+testbalance = balance
+annualInterestRate = 0.2
+lowestPayment = 10
+
+while True:
+    for m in range(1,13):
+        unpaid = testbalance - lowestPayment
+        testbalance = unpaid + unpaid * annualInterestRate / 12
+        if testbalance <= 0:
+            print(lowestPayment, m)
+            break
+    if testbalance <= 0:
+        print(lowestPayment)
+        break
+    lowestPayment += 10
+    testbalance = balance
